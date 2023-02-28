@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product list</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+      
+    <script src="bootstrap.min.js"></script>
+
+  <script src="jquery.js"></script>
+
+  <style>
+    .but{
+      visibility: hidden;
+    }
+    .navbar-text{
+      position: absolute;
+      left: 73%;
+      top: 19px;
+    }
+    
+    @media only screen and (min-width: 200px) and (max-width:1000px){
+      .table-responsive{
+        position: absolute;
+        width: 100vw !important;
+        height: 100vh !important;
+
+      }
+    }
+
+  @media only screen and (min-width: 200px) and (max-width:1000px) {
+  .navbar-toggler{
+    font-size: 18px;
+     margin-top: -3px; 
+    padding: 0px;
+    visibility: visible;
+  }
+  .navbar-text{
+    visibility: hidden;
+  }
+}
+@media only screen and (min-width: 200px) and (max-width:693px){
+.btn{
+  margin: 5px;
+}
+}
+@media only screen and (min-width: 693px) and (max-width:1400px){
+.btn{
+  margin: 5px;
+}
+}
+
+  </style>
+  
+</head>
+<body>
+    <!-- product navbar -->
+    
+    <nav class="navbar navbar-expand{-sm|-md|-lg}">
+    
+      <!-- navbar-text -->
+      <div class="navbar-text justify-item-end">
+        <ul class="nav navbar-nav navbar-right flex-row">
+          <li> <button type="button" class="btn btn-primary mx-4"><i class=""></i>add</button></li>
+          <li class="text-white">Username</li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out mx-3">Logout</span></a></li>
+        </ul>
+      </div>
+    
+      <!-- brand-name -->
+      <div class="container-fluid bg-success p-3 col-12">
+    
+        <div class="navbar-header">
+          <a class="navbar-brand text-white" href="#">Warehouse name</a>
+        </div>
+    
+        <!-- toggler-icon -->
+        <button class="but navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar-sm-lg-btn-show">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- inside toggler contains -->
+        <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+          <ul>
+            <li> <button type="button" class="btn btn-primary mx-4 m-4"><i class=""></i>add</button></li>
+            <li>
+              <h5 class="mx-4">Username</h5>
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-out mx-4">Logout</span></a></li>
+          </ul>
+        </div>
+    
+      </div>
+    
+    </nav>
+
+      <!-- product list table -->
+      
+        <div  class="table-responsive"  style="overflow-x: auto; width: 100%;">
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm text-center" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th class="th-sm">Date
+        
+              </th>
+              <th class="th-sm">Produc_name
+         
+              </th>
+              <th class="th-sm">quantity
+        
+              </th>
+              <th class="th-sm">quantity_format
+        
+              </th>
+              <th class="th-sm">supplier
+        
+              </th>
+              <th class="th-sm">Remark
+        
+              </th>
+            <th class="th-sm">
+             
+            </th>
+            
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>24/02/2023</td>
+              <td>rice</td>
+              <td>10</td>
+              <td>kg</td>
+              <td>nanded</td>
+              <td></td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">add </button>
+                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modal_2">Dispatch</button>
+                </td>
+             </tr>
+          
+          </tbody>
+        </table>
+        </div>
+        
+        <!-- The Modal and popup for add-->
+        <div class="modal" id="Modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Add Product</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button> <!-- upper close button -->
+              </div>
+        
+              <!-- Modal body -->
+              <div class="modal-body">
+
+                <!-- product form -->
+                <form action="" class="form-control bg-light">
+                  <label for="Produc_name"class="form-label">Date</label>
+                  <input type="date" id="Date" class="form-control border-2">
+
+                  <label for="Produc_name" class="form-label">Product_name</label>
+                  <input type="text" id="Product_name" class="form-control border-2">
+
+                  <label for="Produc_name" class="form-label">Quantity</label>
+                  <input type="number" id="Quantity" class="form-control border-2"><br>
+
+                    <select class="form-select border-2" aria-label="Default select example">
+                      <option selected>Product_format</option>
+                      <option value="1">Kg</option>
+                      <option value="2">ltr</option>
+                      <option value="3">tons</option>
+                    </select><br>
+
+                    <label for="Produc_name" class="form-label">Supplier_name</label>
+                    <input type="text" id="supplier" class="form-control border-2">
+
+                    <label for="Produc_name" class="form-label">Remark</label>
+                    <input type="text" id="remark" class="form-control border-2"><br>
+                </form>
+              </div>
+        
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+
+
+
+         <!-- The Modal for dispatch -->
+
+         <div class="modal" id="Modal_2">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <!-- Modal Header -->
+
+              <div class="modal-header">
+                <h4 class="modal-title">Dispacth producat</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+        
+
+
+              <!-- Modal body -->
+
+              <div class="modal-body">
+                <!-- Dispatch form -->
+                <form action="" class="form-control bg-light">
+                  <label for="Produc_name"class="form-label">Date</label>
+                   <input type="date" id="Date" class="form-control border-2">
+
+                    <label for="Produc_name" class="form-label">Product_name</label>
+                     <input type="text" id="Product_name" class="form-control border-2">
+
+                      <label for="Produc_name" class="form-label">Quantity</label>
+                       <input type="number" id="Quantity" class="form-control border-2"><br>
+
+                        <select class="form-select border-2" aria-label="Default select example">
+                         <option selected>Product_format</option>
+                          <option value="1">Kg</option>
+                           <option value="2">ltr</option>
+                           <option value="3">tons</option>
+                         </select><br>
+                       <label for="handle-by" class="form-label">handle_by</label>
+                     <input type="text" id="handle_by" class="form-control border-2">
+
+                  <label for="location" class="form-label">location</label>
+                <input type="text" id="loc" class="form-control border-2"><br>
+              </form>
+            </div>
+        
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">Save</button>
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+               </div>
+        
+            </div>
+          </div>
+        </div>
+
+      
+</body>
+</html>

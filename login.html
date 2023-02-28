@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+       <script src="bootstrap.min.js"></script>
+    <style>
+        input:focus,
+        button:focus{  
+            box-shadow: none !important;
+        }
+        .card,.btn, input{
+            border-radius: 0 !important;
+        }
+    </style>
+    
+</head>
+
+<body class=" bg-body-secondary">
+
+    <!-- login form heading -->
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class=" col-lg-4- col-md-8 col-sm-8">
+                <div class="card shadow">
+
+                    <div class="card.title text-center border-bottom">
+                        <h2 class="p-3">Login</h2>
+                    </div>
+
+                    <!-- login form -->
+
+                    <div class="card-body">
+                        <from action="index.js" method="POST" id="myForm" >
+
+                            <div class="mb-4">   
+                                <label for="floatingInput" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="">
+                            </div>
+
+                            <div class="mb-4">    
+                                <label for="Password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="">
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </from>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+       const myForm = document.getElementById("myForm");
+
+/**
+ * We'll define the `handleFormSubmit()` event handler function in the next step.
+ */
+   myForm.addEventListener("submit", handleFormSubmit);
+           
+    </script>
+</body>
+</html>
