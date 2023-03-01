@@ -13,16 +13,10 @@
   <script src="jquery.js"></script>
 
   <style>
-    .but{
-      visibility: hidden;
-    }
-    .navbar-text{
-      position: absolute;
-      left: 73%;
-      top: 19px;
-    }
     
-    @media only screen and (min-width: 200px) and (max-width:1000px){
+
+    
+    @media only screen and (min-width: 200px) and (max-width:1200px){
       .table-responsive{
         position: absolute;
         width: 100vw !important;
@@ -31,27 +25,15 @@
       }
     }
 
-  @media only screen and (min-width: 200px) and (max-width:1000px) {
-  .navbar-toggler{
-    font-size: 18px;
-     margin-top: -3px; 
-    padding: 0px;
-    visibility: visible;
-  }
-  .navbar-text{
-    visibility: hidden;
-  }
-}
-@media only screen and (min-width: 200px) and (max-width:693px){
+ 
+ 
+
+@media only screen and (min-width: 200px) and (max-width:1200px){
 .btn{
   margin: 5px;
 }
 }
-@media only screen and (min-width: 693px) and (max-width:1400px){
-.btn{
-  margin: 5px;
-}
-}
+
 
   </style>
   
@@ -59,49 +41,23 @@
 <body>
     <!-- product navbar -->
     
-    <nav class="navbar navbar-expand{-sm|-md|-lg}">
-    
-      <!-- navbar-text -->
-      <div class="navbar-text justify-item-end">
-        <ul class="nav navbar-nav navbar-right flex-row">
-          <li> <button type="button" class="btn btn-primary mx-4"><i class=""></i>add</button></li>
-          <li class="text-white">Username</li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-out mx-3">Logout</span></a></li>
-        </ul>
+    <nav class="navbar navbar-expand{-sm|-md|-lg|-xl}">
+      <div class="container-fluid bg-success col-12 p-3">
+      <div class="navbar-header">
+        <a class="navbar-brand text-white" href="#">warehouse name</a>
       </div>
     
-      <!-- brand-name -->
-      <div class="container-fluid bg-success p-3 col-12">
-    
-        <div class="navbar-header">
-          <a class="navbar-brand text-white" href="#">Warehouse name</a>
-        </div>
-    
-        <!-- toggler-icon -->
-        <button class="but navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar-sm-lg-btn-show">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <!-- inside toggler contains -->
-        <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
-          <ul>
-            <li> <button type="button" class="btn btn-primary mx-4 m-4"><i class=""></i>add</button></li>
-            <li>
-              <h5 class="mx-4">Username</h5>
-            </li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-out mx-4">Logout</span></a></li>
-          </ul>
-        </div>
-    
-      </div>
-    
-    </nav>
-
+      <ul class="nav navbar-nav navbar-right flex-row mx-4">
+        <li> <button type="button" class="bt mx-4" data-bs-toggle="modal" data-bs-target="#Modals">add </button></li>
+        <li><a href="#"><span class="nam mx-4">name</span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-out text-white  mx-4">Logout</span></a></li>
+      </ul>
+    </div>
+  </nav>
       <!-- product list table -->
       
         <div  class="table-responsive"  style="overflow-x: auto; width: 100%;">
-        <table id="dtBasicExample" class="table table-striped table-bordered table-sm text-center" cellspacing="0" width="100%">
+        <table id="tables" class="table table-striped table-bordered text-center" cellspacing="0" width="100%">
           <thead>
             <tr>
               <th class="th-sm">Date
@@ -119,7 +75,7 @@
               <th class="th-sm">supplier
         
               </th>
-              <th class="th-sm">Remark
+              <th class="th-sm px-5">Remark
         
               </th>
             <th class="th-sm">
@@ -146,6 +102,61 @@
           </tbody>
         </table>
         </div>
+
+
+        <!-- upper add button popup -->
+
+
+        <div class="modal" id="Modals">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Add Product</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button> <!-- upper close button -->
+              </div>
+        
+              <!-- Modal body -->
+              <div class="modal-body">
+
+                <!-- product form -->
+                <form action="" class="form-control bg-light">
+                  <label for=" "class="form-label">Date</label>
+                  <input type="date" id="Date1" class="form-control border-2">
+
+                  <label for=" " class="form-label">Product_name</label>
+                  <input type="text" id="Product_name1" class="form-control border-2">
+
+                  <label for=" " class="form-label">Quantity</label>
+                  <input type="number" id="Quantity1" class="form-control border-2"><br>
+
+                    <select class="form-select border-2" aria-label="Default select example">
+                      <option selected>Product_format</option>
+                      <option value="1">Kg</option>
+                      <option value="2">ltr</option>
+                      <option value="3">tons</option>
+                    </select><br>
+
+                    <label for="Produc_name" class="form-label">Supplier_name</label>
+                    <input type="text" id="supplier1" class="form-control border-2">
+
+                    <label for="Produc_name" class="form-label">Remark</label>
+                    <input type="text" id="remark1" class="form-control border-2"><br>
+                </form>
+              </div>
+        
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="bt">Save</button>
+                <button type="button" class="bt" data-bs-dismiss="modal">Close</button>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+
+
         
         <!-- The Modal and popup for add-->
         <div class="modal" id="Modal">
